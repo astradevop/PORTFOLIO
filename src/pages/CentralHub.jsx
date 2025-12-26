@@ -45,7 +45,7 @@ export default function CentralHub() {
                     {/* Top - About Me/Contact */}
                     <div
                         onClick={() => navigate('/about')}
-                        className="absolute top-8 sm:top-12 md:top-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 sm:gap-3 group cursor-pointer z-20"
+                        className="absolute top-8 sm:top-12 md:top-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 sm:gap-3 group cursor-pointer z-30"
                     >
                         <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/10 bg-background-dark/50 text-white backdrop-blur-sm hover:bg-primary/20 hover:border-primary transition-all">
                             <span className="material-symbols-outlined text-lg sm:text-xl group-hover:-translate-y-1 transition-transform">arrow_upward</span>
@@ -56,7 +56,7 @@ export default function CentralHub() {
                     {/* Left - Tools & Technologies */}
                     <div
                         onClick={() => navigate('/tools')}
-                        className="absolute left-2 sm:left-6 md:left-12 top-1/2 -translate-y-1/2 flex flex-col items-center gap-2 group cursor-pointer z-20"
+                        className="absolute left-2 sm:left-6 md:left-12 top-1/2 -translate-y-1/2 flex flex-col items-center gap-2 group cursor-pointer z-30"
                     >
                         <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/10 bg-background-dark/50 text-white backdrop-blur-sm hover:bg-primary/20 hover:border-primary transition-all">
                             <span className="material-symbols-outlined text-lg sm:text-xl group-hover:-translate-x-1 transition-transform">arrow_back</span>
@@ -67,7 +67,7 @@ export default function CentralHub() {
                     {/* Right - Projects */}
                     <div
                         onClick={() => navigate('/projects')}
-                        className="absolute right-2 sm:right-6 md:right-12 top-1/2 -translate-y-1/2 flex flex-col items-center gap-2 group cursor-pointer z-20"
+                        className="absolute right-2 sm:right-6 md:right-12 top-1/2 -translate-y-1/2 flex flex-col items-center gap-2 group cursor-pointer z-30"
                     >
                         <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/10 bg-background-dark/50 text-white backdrop-blur-sm hover:bg-primary/20 hover:border-primary transition-all">
                             <span className="material-symbols-outlined text-lg sm:text-xl group-hover:translate-x-1 transition-transform">arrow_forward</span>
@@ -78,7 +78,7 @@ export default function CentralHub() {
                     {/* Bottom - Experience/Education */}
                     <div
                         onClick={() => navigate('/experience')}
-                        className="absolute bottom-8 sm:bottom-12 md:bottom-24 left-1/2 -translate-x-1/2 flex flex-col-reverse items-center gap-2 group cursor-pointer text-center z-20"
+                        className="absolute bottom-8 sm:bottom-12 md:bottom-24 left-1/2 -translate-x-1/2 flex flex-col-reverse items-center gap-2 group cursor-pointer text-center z-30"
                     >
                         <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/10 bg-background-dark/50 text-white backdrop-blur-sm hover:bg-primary/20 hover:border-primary transition-all">
                             <span className="material-symbols-outlined text-lg sm:text-xl group-hover:translate-y-1 transition-transform">arrow_downward</span>
