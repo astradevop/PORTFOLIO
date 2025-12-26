@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import profileImage from '../assets/akash_portfolio.png';
 
 export default function AboutMe() {
     const navigate = useNavigate();
@@ -8,9 +9,11 @@ export default function AboutMe() {
             {/* Top Navigation */}
             <header className="w-full flex items-center justify-between border-b border-gray-200 dark:border-[#2b2839] px-6 py-4 md:px-10 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md fixed top-0 left-0 right-0">
                 <div className="flex items-center gap-4">
-                    <div className="size-8 rounded-full bg-primary flex items-center justify-center text-white">
-                        <span className="material-symbols-outlined text-xl">person</span>
-                    </div>
+                    <img
+                        src={profileImage}
+                        alt="Akash S Nair"
+                        className="size-8 rounded-full object-cover border-2 border-primary/20"
+                    />
                     <h2 className="text-lg font-bold leading-tight tracking-[-0.015em] hidden sm:block">Akash S Nair</h2>
                 </div>
                 <div className="flex items-center gap-6">
@@ -67,7 +70,7 @@ export default function AboutMe() {
                                 <img
                                     alt="Professional headshot of a developer"
                                     className="w-full h-full object-cover"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkJ3-oR6XO1bl8mwCMxtAQg7J5tK5YKs7uQMF-4gxDCTe2KtJLLY5So3796815VS-EAYjX9Veb2HlyyRj8meB_En5bA7mFKoTbjvuJBHpjAqx3CEQ5Hal5NF69Axiw7PlfqXHD4bdij2QSwa5uDhKUhpc7mFAhjRkNNreUilLUYAyY2YF0kHRSH5dLzAx30fMi8aJVr7Pi6ZQOVYHaJvgLbCz2VfYte72ouBop4vMeIYBbuaNopvtKwqHFAH_wqKAIjKN3viWtyw"
+                                    src={profileImage}
                                 />
                             </div>
                         </div>
