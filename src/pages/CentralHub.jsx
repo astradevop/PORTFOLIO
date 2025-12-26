@@ -17,14 +17,14 @@ export default function CentralHub() {
 
             <div className="relative z-10 flex flex-col h-full w-full">
                 {/* Header */}
-                <header className="absolute top-0 left-0 right-0 flex items-center justify-between px-8 py-6 z-50">
+                <header className="absolute top-0 left-0 right-0 flex items-center justify-between px-8 py-6 z-50 pointer-events-none">
                     <div className="flex items-center gap-3">
                         <div className="size-10 bg-gradient-to-br from-primary to-purple-600 rounded-lg flex items-center justify-center shadow-lg shadow-primary/20">
                             <span className="material-symbols-outlined text-white text-2xl">terminal</span>
                         </div>
                         <h2 className="text-white text-lg font-bold tracking-tight hidden sm:block">AKASH.DEV</h2>
                     </div>
-                    <button className="flex items-center justify-center size-12 rounded-full bg-white/5 hover:bg-white/10 border border-white/5 backdrop-blur-md transition-colors group">
+                    <button className="flex items-center justify-center size-12 rounded-full bg-white/5 hover:bg-white/10 border border-white/5 backdrop-blur-md transition-colors group pointer-events-auto">
                         <span className="material-symbols-outlined text-white group-hover:text-primary transition-colors">menu</span>
                     </button>
                 </header>
