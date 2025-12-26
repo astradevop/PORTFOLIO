@@ -6,6 +6,7 @@ export const useDragNavigation = (routes) => {
     const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
     const [isDragging, setIsDragging] = useState(false);
     const [dragDirection, setDragDirection] = useState(null);
+    const [nextPage, setNextPage] = useState(null);
 
     useEffect(() => {
         let startX = 0;
@@ -14,10 +15,13 @@ export const useDragNavigation = (routes) => {
         let currentY = 0;
         let isDraggingFlag = false;
 
-        const threshold = 100; // Minimum drag distance to navigate
-        const maxDrag = 300; // Maximum visual drag distance
+        const threshold = 150; // Minimum drag distance to navigate
+        const maxDrag = 400; // Maximum visual drag distance
 
-        const handleStart = (x, y) => {
+        const handleStart = (x, y, e) => {
+            // Ignore if clicking on interactive elements
+            if (e.target.closest('button, a, input, textarea, select, [role="button"]')) return;
+
             startX = x;
             startY = y;
             currentX = x;
@@ -41,20 +45,32 @@ export const useDragNavigation = (routes) => {
                 const clampedX = Math.max(-maxDrag, Math.min(maxDrag, deltaX));
                 setDragOffset({ x: clampedX, y: 0 });
 
-                if (deltaX > 20 && routes.left) {
+                // Inverted: drag RIGHT to go to right page (Projects), drag LEFT to go to left page (Tools)
+                if (deltaX < -50 && routes.left) {
                     setDragDirection('left');
-                } else if (deltaX < -20 && routes.right) {
+                    setNextPage(routes.left);
+                } else if (deltaX > 50 && routes.right) {
                     setDragDirection('right');
+                    setNextPage(routes.right);
+                } else {
+                    setDragDirection(null);
+                    setNextPage(null);
                 }
             } else {
-                // Vertical drag
+                // Vertical drag  
                 const clampedY = Math.max(-maxDrag, Math.min(maxDrag, deltaY));
                 setDragOffset({ x: 0, y: clampedY });
 
-                if (deltaY > 20 && routes.up) {
+                // Inverted: drag UP to go to up page (About), drag DOWN to go to down page (Experience)
+                if (deltaY < -50 && routes.up) {
                     setDragDirection('up');
-                } else if (deltaY < -20 && routes.down) {
+                    setNextPage(routes.up);
+                } else if (deltaY > 50 && routes.down) {
                     setDragDirection('down');
+                    setNextPage(routes.down);
+                } else {
+                    setDragDirection(null);
+                    setNextPage(null);
                 }
             }
         };
@@ -65,17 +81,17 @@ export const useDragNavigation = (routes) => {
             const deltaX = currentX - startX;
             const deltaY = currentY - startY;
 
-            // Navigate if threshold is met
+            // Navigate if threshold is met (inverted to match intuitive drag-toward-target)
             if (Math.abs(deltaX) > Math.abs(deltaY)) {
-                if (deltaX > threshold && routes.left) {
+                if (deltaX < -threshold && routes.left) {
                     navigate(routes.left);
-                } else if (deltaX < -threshold && routes.right) {
+                } else if (deltaX > threshold && routes.right) {
                     navigate(routes.right);
                 }
             } else {
-                if (deltaY > threshold && routes.up) {
+                if (deltaY < -threshold && routes.up) {
                     navigate(routes.up);
-                } else if (deltaY < -threshold && routes.down) {
+                } else if (deltaY > threshold && routes.down) {
                     navigate(routes.down);
                 }
             }
@@ -85,17 +101,19 @@ export const useDragNavigation = (routes) => {
             setIsDragging(false);
             setDragOffset({ x: 0, y: 0 });
             setDragDirection(null);
+            setNextPage(null);
         };
 
         // Mouse events
         const handleMouseDown = (e) => {
-            // Ignore if clicking on interactive elements
-            if (e.target.closest('button, a, input, textarea, select')) return;
-            handleStart(e.clientX, e.clientY);
+            handleStart(e.clientX, e.clientY, e);
         };
 
         const handleMouseMove = (e) => {
-            handleMove(e.clientX, e.clientY);
+            if (isDraggingFlag) {
+                e.preventDefault();
+                handleMove(e.clientX, e.clientY);
+            }
         };
 
         const handleMouseUp = () => {
@@ -104,50 +122,19 @@ export const useDragNavigation = (routes) => {
 
         // Touch events
         const handleTouchStart = (e) => {
-            if (e.target.closest('button, a, input, textarea, select')) return;
             const touch = e.touches[0];
-            handleStart(touch.clientX, touch.clientY);
+            handleStart(touch.clientX, touch.clientY, e);
         };
 
         const handleTouchMove = (e) => {
-            const touch = e.touches[0];
-            handleMove(touch.clientX, touch.clientY);
+            if (isDraggingFlag) {
+                const touch = e.touches[0];
+                handleMove(touch.clientX, touch.clientY);
+            }
         };
 
         const handleTouchEnd = () => {
             handleEnd();
-        };
-
-        // Keyboard navigation
-        const handleKeyDown = (e) => {
-            switch (e.key) {
-                case 'ArrowUp':
-                    if (routes.up) {
-                        e.preventDefault();
-                        navigate(routes.up);
-                    }
-                    break;
-                case 'ArrowDown':
-                    if (routes.down) {
-                        e.preventDefault();
-                        navigate(routes.down);
-                    }
-                    break;
-                case 'ArrowLeft':
-                    if (routes.left) {
-                        e.preventDefault();
-                        navigate(routes.left);
-                    }
-                    break;
-                case 'ArrowRight':
-                    if (routes.right) {
-                        e.preventDefault();
-                        navigate(routes.right);
-                    }
-                    break;
-                default:
-                    break;
-            }
         };
 
         // Add event listeners
@@ -157,7 +144,6 @@ export const useDragNavigation = (routes) => {
         document.addEventListener('touchstart', handleTouchStart, { passive: true });
         document.addEventListener('touchmove', handleTouchMove, { passive: true });
         document.addEventListener('touchend', handleTouchEnd);
-        document.addEventListener('keydown', handleKeyDown);
 
         return () => {
             document.removeEventListener('mousedown', handleMouseDown);
@@ -166,9 +152,8 @@ export const useDragNavigation = (routes) => {
             document.removeEventListener('touchstart', handleTouchStart);
             document.removeEventListener('touchmove', handleTouchMove);
             document.removeEventListener('touchend', handleTouchEnd);
-            document.removeEventListener('keydown', handleKeyDown);
         };
     }, [navigate, routes]);
 
-    return { dragOffset, isDragging, dragDirection };
+    return { dragOffset, isDragging, dragDirection, nextPage };
 };
