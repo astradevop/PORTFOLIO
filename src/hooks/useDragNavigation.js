@@ -13,8 +13,9 @@ export const useDragNavigation = (routes) => {
         let currentX = 0;
         let currentY = 0;
         let isDraggingFlag = false;
+        let currentDirection = null;
 
-        const threshold = 80; // Minimum drag distance to navigate (reduced for mobile)
+        const threshold = 80; // Minimum drag distance to navigate
         const maxDrag = 250; // Maximum visual drag distance
 
         const handleStart = (x, y) => {
@@ -23,7 +24,9 @@ export const useDragNavigation = (routes) => {
             currentX = x;
             currentY = y;
             isDraggingFlag = true;
+            currentDirection = null;
             setIsDragging(true);
+            setDragDirection(null);
         };
 
         const handleMove = (x, y) => {
@@ -41,11 +44,14 @@ export const useDragNavigation = (routes) => {
                 const clampedX = Math.max(-maxDrag, Math.min(maxDrag, deltaX));
                 setDragOffset({ x: clampedX, y: 0 });
 
-                if (deltaX > 20 && routes.left) {
+                if (deltaX > threshold && routes.left) {
+                    currentDirection = 'left';
                     setDragDirection('left');
-                } else if (deltaX < -20 && routes.right) {
+                } else if (deltaX < -threshold && routes.right) {
+                    currentDirection = 'right';
                     setDragDirection('right');
                 } else {
+                    currentDirection = null;
                     setDragDirection(null);
                 }
             } else {
@@ -53,11 +59,14 @@ export const useDragNavigation = (routes) => {
                 const clampedY = Math.max(-maxDrag, Math.min(maxDrag, deltaY));
                 setDragOffset({ x: 0, y: clampedY });
 
-                if (deltaY > 20 && routes.up) {
+                if (deltaY > threshold && routes.up) {
+                    currentDirection = 'up';
                     setDragDirection('up');
-                } else if (deltaY < -20 && routes.down) {
+                } else if (deltaY < -threshold && routes.down) {
+                    currentDirection = 'down';
                     setDragDirection('down');
                 } else {
+                    currentDirection = null;
                     setDragDirection(null);
                 }
             }
@@ -66,26 +75,18 @@ export const useDragNavigation = (routes) => {
         const handleEnd = () => {
             if (!isDraggingFlag) return;
 
-            const deltaX = currentX - startX;
-            const deltaY = currentY - startY;
-
-            // Navigate if threshold is met
-            if (Math.abs(deltaX) > Math.abs(deltaY)) {
-                if (deltaX > threshold && routes.left) {
-                    navigate(routes.left);
-                } else if (deltaX < -threshold && routes.right) {
-                    navigate(routes.right);
-                }
-            } else {
-                if (deltaY > threshold && routes.up) {
-                    navigate(routes.up);
-                } else if (deltaY < -threshold && routes.down) {
-                    navigate(routes.down);
+            // Navigate based on current direction if threshold was met
+            if (currentDirection) {
+                const targetRoute = routes[currentDirection];
+                if (targetRoute) {
+                    console.log('Navigating to:', targetRoute, 'Direction:', currentDirection);
+                    navigate(targetRoute);
                 }
             }
 
             // Reset
             isDraggingFlag = false;
+            currentDirection = null;
             setIsDragging(false);
             setDragOffset({ x: 0, y: 0 });
             setDragDirection(null);
@@ -121,7 +122,9 @@ export const useDragNavigation = (routes) => {
         const handleTouchMove = (e) => {
             if (!isDraggingFlag) return;
             // Prevent default to stop page scrolling during drag
-            if (Math.abs(currentX - startX) > 10 || Math.abs(currentY - startY) > 10) {
+            const deltaX = Math.abs(currentX - startX);
+            const deltaY = Math.abs(currentY - startY);
+            if (deltaX > 10 || deltaY > 10) {
                 e.preventDefault();
             }
             const touch = e.touches[0];
@@ -130,6 +133,7 @@ export const useDragNavigation = (routes) => {
 
         const handleTouchEnd = (e) => {
             if (!isDraggingFlag) return;
+            e.preventDefault();
             handleEnd();
         };
 
@@ -171,7 +175,7 @@ export const useDragNavigation = (routes) => {
         document.addEventListener('mouseup', handleMouseUp);
         document.addEventListener('touchstart', handleTouchStart, { passive: false });
         document.addEventListener('touchmove', handleTouchMove, { passive: false });
-        document.addEventListener('touchend', handleTouchEnd, { passive: true });
+        document.addEventListener('touchend', handleTouchEnd, { passive: false });
         document.addEventListener('keydown', handleKeyDown);
 
         return () => {
