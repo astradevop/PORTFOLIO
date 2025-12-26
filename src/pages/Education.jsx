@@ -23,14 +23,14 @@ export default function Education() {
             </div>
 
             {/* Main Container */}
-            <div className="relative z-10 layout-container flex h-full grow flex-col max-w-[1440px] mx-auto p-6 md:p-12 lg:px-20 lg:py-16">
+            <div className="relative z-10 layout-container flex h-full grow flex-col max-w-[1440px] mx-auto p-4 sm:p-6 md:p-8 lg:p-12 xl:px-20 xl:py-16">
                 {/* Header Section */}
                 <header className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-16 animate-fade-in-down">
                     <div className="flex flex-col gap-4 max-w-2xl">
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-[-0.033em]">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-[-0.033em]">
                             Education & <span className="text-primary">Certifications</span>
                         </h1>
-                        <p className="text-text-muted text-lg font-normal leading-relaxed max-w-xl">
+                        <p className="text-text-muted text-base sm:text-lg font-normal leading-relaxed max-w-xl">
                             My academic journey and professional certifications that build the foundation of my expertise in Python full-stack development.
                         </p>
                     </div>

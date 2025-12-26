@@ -18,17 +18,17 @@ export default function Experience() {
                 </div>
             </nav>
 
-            <div className="layout-container flex flex-col items-center w-full max-w-[1000px] mx-auto px-4 sm:px-8 md:px-12 pt-28 pb-32">
+            <div className="layout-container flex flex-col items-center w-full max-w-[1000px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 pt-20 sm:pt-24 md:pt-28 pb-20 sm:pb-32">
                 {/* Header Section */}
                 <header className="w-full flex flex-col items-start gap-4 mb-16 animate-fade-in-down">
                     <div className="flex items-center gap-3">
                         <div className="h-[2px] w-8 bg-primary"></div>
                         <span className="text-primary font-bold tracking-widest uppercase text-sm">Work Experience</span>
                     </div>
-                    <h1 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60">
                         Professional Experience
                     </h1>
-                    <p className="text-[#a19db9] max-w-2xl text-lg leading-relaxed">
+                    <p className="text-[#a19db9] max-w-2xl text-base sm:text-lg leading-relaxed">
                         My journey in Python full-stack development, highlighting key achievements and the technologies I've mastered.
                     </p>
                 </header>
@@ -44,10 +44,10 @@ export default function Experience() {
                             <div className="w-[2px] bg-gradient-to-b from-primary to-[#2b2839] grow h-full -mt-2"></div>
                         </div>
                         <div className="flex flex-col">
-                            <div className="relative bg-card-dark border border-[#2b2839] p-6 md:p-8 rounded-xl hover:border-primary/40 transition-colors duration-300 group-hover:bg-[#232036]">
+                            <div className="relative bg-card-dark border border-[#2b2839] p-4 sm:p-6 md:p-8 rounded-xl hover:border-primary/40 transition-colors duration-300 group-hover:bg-[#232036]">
                                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
                                     <div className="flex items-center gap-4">
-                                        <div className="size-12 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 shrink-0">
+                                        <div className="size-10 sm:size-12 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 shrink-0">
                                             <span className="material-symbols-outlined text-white">terminal</span>
                                         </div>
                                         <div>

@@ -45,80 +45,71 @@ export default function CentralHub() {
                     {/* Top - About Me/Contact */}
                     <div
                         onClick={() => navigate('/about')}
-                        className="absolute top-12 sm:top-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 group cursor-pointer"
+                        className="absolute top-8 sm:top-12 md:top-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 sm:gap-3 group cursor-pointer z-20"
                     >
-                        <div className="flex items-center justify-center w-12 h-12 rounded-full border border-white/10 bg-background-dark/50 text-white backdrop-blur-sm hover:bg-primary/20 hover:border-primary transition-all">
-                            <span className="material-symbols-outlined group-hover:-translate-y-1 transition-transform">arrow_upward</span>
+                        <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/10 bg-background-dark/50 text-white backdrop-blur-sm hover:bg-primary/20 hover:border-primary transition-all">
+                            <span className="material-symbols-outlined text-lg sm:text-xl group-hover:-translate-y-1 transition-transform">arrow_upward</span>
                         </div>
-                        <span className="text-sm font-bold tracking-widest text-[#a19db9] group-hover:text-white transition-colors uppercase">About Me/Contact</span>
+                        <span className="text-[10px] sm:text-xs md:text-sm font-bold tracking-widest text-[#a19db9] group-hover:text-white transition-colors uppercase">About Me</span>
                     </div>
 
                     {/* Left - Tools & Technologies */}
                     <div
                         onClick={() => navigate('/tools')}
-                        className="absolute left-6 sm:left-12 top-1/2 -translate-y-1/2 flex flex-row items-center gap-4 group cursor-pointer hidden sm:flex"
+                        className="absolute left-2 sm:left-6 md:left-12 top-1/2 -translate-y-1/2 flex flex-col items-center gap-2 group cursor-pointer z-20"
                     >
-                        <div className="flex items-center justify-center w-12 h-12 rounded-full border border-white/10 bg-background-dark/50 text-white backdrop-blur-sm hover:bg-primary/20 hover:border-primary transition-all">
-                            <span className="material-symbols-outlined group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                        <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/10 bg-background-dark/50 text-white backdrop-blur-sm hover:bg-primary/20 hover:border-primary transition-all">
+                            <span className="material-symbols-outlined text-lg sm:text-xl group-hover:-translate-x-1 transition-transform">arrow_back</span>
                         </div>
-                        <div className="flex flex-col items-start opacity-50 group-hover:opacity-100 transition-opacity">
-                            <span className="text-sm font-bold tracking-widest text-white uppercase">Tools & Technologies</span>
-                            <span className="text-xs text-[#a19db9]">Philosophy & Stack</span>
-                        </div>
+                        <span className="text-[8px] sm:text-[10px] md:text-xs font-bold tracking-wider text-[#a19db9] group-hover:text-white transition-colors uppercase -rotate-90 whitespace-nowrap">Tools</span>
                     </div>
 
                     {/* Right - Projects */}
                     <div
                         onClick={() => navigate('/projects')}
-                        className="absolute right-6 sm:right-12 top-1/2 -translate-y-1/2 flex flex-row-reverse items-center gap-4 group cursor-pointer hidden sm:flex"
+                        className="absolute right-2 sm:right-6 md:right-12 top-1/2 -translate-y-1/2 flex flex-col items-center gap-2 group cursor-pointer z-20"
                     >
-                        <div className="flex items-center justify-center w-12 h-12 rounded-full border border-white/10 bg-background-dark/50 text-white backdrop-blur-sm hover:bg-primary/20 hover:border-primary transition-all">
-                            <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/10 bg-background-dark/50 text-white backdrop-blur-sm hover:bg-primary/20 hover:border-primary transition-all">
+                            <span className="material-symbols-outlined text-lg sm:text-xl group-hover:translate-x-1 transition-transform">arrow_forward</span>
                         </div>
-                        <div className="flex flex-col items-end opacity-50 group-hover:opacity-100 transition-opacity">
-                            <span className="text-sm font-bold tracking-widest text-white uppercase">Projects</span>
-                            <span className="text-xs text-[#a19db9]">Thoughts & Notes</span>
-                        </div>
+                        <span className="text-[8px] sm:text-[10px] md:text-xs font-bold tracking-wider text-[#a19db9] group-hover:text-white transition-colors uppercase rotate-90 whitespace-nowrap">Projects</span>
                     </div>
 
                     {/* Bottom - Experience/Education */}
                     <div
                         onClick={() => navigate('/experience')}
-                        className="absolute bottom-12 sm:bottom-24 left-1/2 -translate-x-1/2 flex flex-col-reverse items-center gap-3 group cursor-pointer text-center"
+                        className="absolute bottom-8 sm:bottom-12 md:bottom-24 left-1/2 -translate-x-1/2 flex flex-col-reverse items-center gap-2 group cursor-pointer text-center z-20"
                     >
-                        <div className="flex items-center justify-center w-12 h-12 rounded-full border border-white/10 bg-background-dark/50 text-white backdrop-blur-sm hover:bg-primary/20 hover:border-primary transition-all">
-                            <span className="material-symbols-outlined group-hover:translate-y-1 transition-transform">arrow_downward</span>
+                        <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/10 bg-background-dark/50 text-white backdrop-blur-sm hover:bg-primary/20 hover:border-primary transition-all">
+                            <span className="material-symbols-outlined text-lg sm:text-xl group-hover:translate-y-1 transition-transform">arrow_downward</span>
                         </div>
-                        <div className="flex flex-col items-center">
-                            <span className="text-sm font-bold tracking-widest text-[#a19db9] group-hover:text-white transition-colors uppercase">Professional Experience /</span>
-                            <span className="text-xs font-bold tracking-widest text-[#a19db9] group-hover:text-white transition-colors uppercase mt-0.5">Education and Certifications</span>
-                        </div>
+                        <span className="text-[10px] sm:text-xs md:text-sm font-bold tracking-widest text-[#a19db9] group-hover:text-white transition-colors uppercase px-2">Experience</span>
                     </div>
 
                     {/* Center Content */}
-                    <div className="relative z-20 flex flex-col items-center justify-center text-center max-w-4xl mx-auto animate-fade-in">
-                        <div className="absolute -inset-10 border border-primary/20 rounded-full w-[120%] h-[150%] left-[-10%] top-[-25%] animate-pulse-slow pointer-events-none hidden md:block"></div>
-                        <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-white mb-6 drop-shadow-2xl relative">
+                    <div className="relative z-20 flex flex-col items-center justify-center text-center max-w-4xl mx-auto px-4 animate-fade-in">
+                        <div className="absolute -inset-10 border border-primary/20 rounded-full w-[120%] h-[150%] left-[-10%] top-[-25%] animate-pulse-slow pointer-events-none hidden lg:block"></div>
+                        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-black tracking-tighter text-white mb-4 sm:mb-6 drop-shadow-2xl relative leading-tight">
                             AKASH S
-                            <span className="text-primary block md:inline"> NAIR</span>
+                            <span className="text-primary block sm:inline"> NAIR</span>
                         </h1>
-                        <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
-                            <p className="text-[#a19db9] text-lg md:text-xl font-medium tracking-wide">
+                        <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 md:gap-8 flex-wrap justify-center">
+                            <p className="text-[#a19db9] text-sm sm:text-base md:text-lg lg:text-xl font-medium tracking-wide">
                                 Python Full-Stack Developer
                             </p>
-                            <div className="hidden md:block w-px h-6 bg-white/20"></div>
-                            <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10">
+                            <div className="hidden sm:block w-px h-6 bg-white/20"></div>
+                            <div className="flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-white/5 border border-white/10">
                                 <span className="relative flex h-2 w-2">
                                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                                     <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                                 </span>
-                                <span className="text-xs font-bold text-white tracking-wide uppercase">Available for work</span>
+                                <span className="text-[10px] sm:text-xs font-bold text-white tracking-wide uppercase">Available for work</span>
                             </div>
                         </div>
-                        <div className="mt-12">
-                            <button className="group relative flex items-center justify-center gap-3 bg-white text-background-dark hover:bg-gray-200 px-8 py-4 rounded-full font-bold text-base transition-all hover:scale-105 shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)]">
+                        <div className="mt-8 sm:mt-12">
+                            <button className="group relative flex items-center justify-center gap-2 sm:gap-3 bg-white text-background-dark hover:bg-gray-200 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-sm sm:text-base transition-all hover:scale-105 shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)]">
                                 <span>Explore Portfolio</span>
-                                <span className="material-symbols-outlined text-lg transition-transform group-hover:rotate-45">explore</span>
+                                <span className="material-symbols-outlined text-base sm:text-lg transition-transform group-hover:rotate-45">explore</span>
                             </button>
                         </div>
                     </div>

@@ -49,15 +49,15 @@ export default function Projects() {
                 </div>
 
                 {/* Left Sidebar: Header & Navigation */}
-                <div className="flex-shrink-0 w-full lg:w-[400px] xl:w-[480px] p-8 lg:p-12 flex flex-col justify-between z-20 relative bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm lg:bg-transparent lg:dark:bg-transparent lg:backdrop-blur-none border-b border-gray-200/10 lg:border-b-0 lg:border-r">
+                <div className="flex-shrink-0 w-full lg:w-[400px] xl:w-[480px] p-4 sm:p-6 lg:p-12 flex flex-col justify-between z-20 relative bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm lg:bg-transparent lg:dark:bg-transparent lg:backdrop-blur-none border-b border-gray-200/10 lg:border-b-0 lg:border-r">
                     {/* Header Content */}
                     <div className="flex flex-col gap-6 pt-4">
                         <div className="space-y-4">
                             <p className="text-primary font-bold tracking-widest text-sm uppercase">Selected Works</p>
-                            <h1 className="text-4xl lg:text-5xl font-black leading-tight tracking-[-0.033em]">
+                            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight tracking-[-0.033em]">
                                 FEATURED<br />PROJECTS
                             </h1>
-                            <p className="text-gray-500 dark:text-[#a19db9] text-base lg:text-lg font-normal leading-relaxed max-w-sm">
+                            <p className="text-gray-500 dark:text-[#a19db9] text-sm sm:text-base lg:text-lg font-normal leading-relaxed max-w-sm">
                                 A curated collection of my recent work across web development, mobile experiences, and digital branding.
                             </p>
                         </div>
@@ -79,13 +79,13 @@ export default function Projects() {
 
                 {/* Right Content: Horizontal Scrolling Carousel */}
                 <div className="flex-1 h-full overflow-hidden relative group/carousel">
-                    <div className="h-full w-full overflow-x-auto overflow-y-hidden no-scrollbar flex items-center px-8 lg:px-12 snap-x snap-mandatory scroll-smooth">
+                    <div className="h-full w-full overflow-x-auto overflow-y-hidden no-scrollbar flex items-center px-4 sm:px-6 lg:px-12 snap-x snap-mandatory scroll-smooth">
                         <div className="flex gap-6 lg:gap-10 py-10 items-center">
                             {projects.map((project) => (
                                 <article
                                     key={project.id}
                                     onClick={() => navigate(`/projects/${project.id}`)}
-                                    className="snap-center shrink-0 w-[340px] md:w-[420px] flex flex-col gap-0 rounded-lg bg-white dark:bg-[#1d1c27] shadow-xl dark:shadow-black/40 border border-gray-200 dark:border-white/5 overflow-hidden group hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 transition-all duration-300 ease-out cursor-pointer"
+                                    className="snap-center shrink-0 w-[280px] sm:w-[340px] md:w-[420px] flex flex-col gap-0 rounded-lg bg-white dark:bg-[#1d1c27] shadow-xl dark:shadow-black/40 border border-gray-200 dark:border-white/5 overflow-hidden group hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 transition-all duration-300 ease-out cursor-pointer"
                                 >
                                     {/* Image Area */}
                                     <div className="relative w-full aspect-[4/3] overflow-hidden">

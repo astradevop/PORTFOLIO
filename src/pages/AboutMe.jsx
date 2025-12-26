@@ -25,18 +25,18 @@ export default function AboutMe() {
             </header>
 
             {/* Main Content Wrapper */}
-            <main className="flex-grow flex flex-col items-center justify-center pt-24 pb-24 px-4 sm:px-8 md:px-20 lg:px-40 w-full max-w-[1400px] mx-auto">
+            <main className="flex-grow flex flex-col items-center justify-center pt-20 sm:pt-24 pb-16 sm:pb-24 px-4 sm:px-6 md:px-8 lg:px-20 xl:px-40 w-full max-w-[1400px] mx-auto">
                 {/* Hero Section */}
                 <section className="w-full flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-16 py-10 lg:py-16">
                     {/* Text Content */}
                     <div className="flex flex-col gap-6 text-center lg:text-left lg:w-1/2">
                         <div className="space-y-2">
                             <span className="text-primary font-bold tracking-wider uppercase text-xs">Introduction</span>
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-[-0.033em]">
+                            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-[-0.033em]">
                                 Building Digital <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500">Solutions.</span>
                             </h1>
                         </div>
-                        <h2 className="text-base md:text-lg font-normal leading-relaxed text-gray-600 dark:text-gray-300 max-w-xl mx-auto lg:mx-0">
+                        <h2 className="text-sm sm:text-base md:text-lg font-normal leading-relaxed text-gray-600 dark:text-gray-300 max-w-xl mx-auto lg:mx-0">
                             Hi, I'm Akash. BCA graduate specializing in <strong className="text-primary dark:text-white">Python full-stack development</strong> with Django, Flask, and React.js. I build secure, scalable web applications with clean architecture and modern UI design.
                         </h2>
                         {/* Social & Actions */}
@@ -62,7 +62,7 @@ export default function AboutMe() {
                     <div className="relative lg:w-1/2 flex justify-center lg:justify-end">
                         {/* Decorative blurred circle behind */}
                         <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full scale-75 animate-pulse"></div>
-                        <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[420px] lg:h-[480px] rounded-full lg:rounded-[10rem] overflow-hidden shadow-2xl border-4 border-white/10 dark:border-white/5 rotate-0 lg:-rotate-2 transition-transform hover:rotate-0 duration-500">
+                        <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-[420px] lg:h-[480px] rounded-full lg:rounded-[10rem] overflow-hidden shadow-2xl border-4 border-white/10 dark:border-white/5 rotate-0 lg:-rotate-2 transition-transform hover:rotate-0 duration-500">
                             <div className="w-full h-full bg-gradient-to-br from-gray-800 to-black relative">
                                 <img
                                     alt="Professional headshot of a developer"
