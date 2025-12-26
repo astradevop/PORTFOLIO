@@ -1,11 +1,56 @@
 import { useNavigate } from 'react-router-dom';
+import { useDragNavigation } from '../hooks/useDragNavigation';
 
 export default function CentralHub() {
     const navigate = useNavigate();
 
+    const { dragState, handlers } = useDragNavigation({
+        UP: '/about',
+        DOWN: '/experience',
+        LEFT: '/tools',
+        RIGHT: '/projects'
+    });
+
+    const getOverlayContent = () => {
+        if (!dragState.isDragging || !dragState.direction) return null;
+
+        const config = {
+            UP: { icon: 'arrow_upward', label: 'About Me', color: 'from-blue-500/20 to-purple-500/20' },
+            DOWN: { icon: 'arrow_downward', label: 'Experience', color: 'from-emerald-500/20 to-teal-500/20' },
+            LEFT: { icon: 'arrow_back', label: 'Tools', color: 'from-orange-500/20 to-red-500/20' },
+            RIGHT: { icon: 'arrow_forward', label: 'Projects', color: 'from-pink-500/20 to-rose-500/20' }
+        };
+
+        const { icon, label, color } = config[dragState.direction];
+        const opacity = Math.min(dragState.distance / 200, 0.8); // Cap opacity at 0.8
+        const scale = Math.min(1 + (dragState.distance / 1000), 1.2);
+
+        return (
+            <div
+                className={`fixed inset-0 z-[60] flex items-center justify-center pointer-events-none transition-all duration-300`}
+                style={{ opacity }}
+            >
+                <div className={`absolute inset-0 bg-gradient-to-br ${color} backdrop-blur-[2px]`}></div>
+                <div
+                    className="relative flex flex-col items-center gap-4 transition-transform duration-100"
+                    style={{ transform: `scale(${scale})` }}
+                >
+                    <div className="size-20 rounded-full border-2 border-white/20 bg-white/10 backdrop-blur-md flex items-center justify-center shadow-2xl">
+                        <span className="material-symbols-outlined text-4xl text-white">{icon}</span>
+                    </div>
+                    <h3 className="text-2xl font-bold text-white tracking-widest uppercase shadow-black drop-shadow-lg">{label}</h3>
+                    <p className="text-white/60 text-sm font-mono tracking-wider">Release to navigate</p>
+                </div>
+            </div>
+        );
+    };
+
     return (
-        <div className="bg-background-dark text-white font-display overflow-hidden h-screen w-screen selection:bg-primary selection:text-white relative"
+        <div
+            className="bg-background-dark text-white font-display overflow-hidden h-screen w-screen selection:bg-primary selection:text-white relative touch-none select-none"
+            {...handlers}
         >
+            {getOverlayContent()}
             {/* Background Grid Pattern */}
             <div className="fixed inset-0 pointer-events-none z-0">
                 <div className="absolute inset-0 bg-grid-pattern opacity-50"></div>
