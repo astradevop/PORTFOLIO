@@ -137,39 +137,42 @@ export default function CentralHub() {
                     </div>
 
                     {/* Center Content */}
-                    <div className="relative z-20 flex flex-col items-center justify-center text-center max-w-4xl mx-auto animate-fade-in">
+                    <div className="relative z-20 flex flex-col items-center justify-center text-center max-w-4xl mx-auto animate-fade-in px-4">
                         <div className="absolute -inset-10 border border-primary/20 rounded-full w-[120%] h-[150%] left-[-10%] top-[-25%] animate-pulse-slow pointer-events-none hidden md:block"></div>
-                        <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-white mb-6 drop-shadow-2xl relative">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black tracking-tighter text-white mb-4 md:mb-6 drop-shadow-2xl relative leading-tight">
                             AKASH S
                             <span className="text-primary block md:inline"> NAIR</span>
                         </h1>
-                        <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
-                            <p className="text-[#a19db9] text-lg md:text-xl font-medium tracking-wide">
+                        <div className="flex flex-col md:flex-row items-center gap-3 md:gap-8">
+                            <p className="text-base sm:text-lg md:text-xl font-medium tracking-wide text-[#a19db9]">
                                 Python Full-Stack Developer
                             </p>
                             <div className="hidden md:block w-px h-6 bg-white/20"></div>
-                            <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10">
+                            <div className="flex items-center gap-2 px-3 md:px-4 py-1.5 rounded-full bg-white/5 border border-white/10">
                                 <span className="relative flex h-2 w-2">
                                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                                     <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                                 </span>
-                                <span className="text-xs font-bold text-white tracking-wide uppercase">Available for work</span>
+                                <span className="text-[10px] sm:text-xs font-bold text-white tracking-wide uppercase">Available for work</span>
                             </div>
                         </div>
-                        <div className="mt-12">
-                            <button className="group relative flex items-center justify-center gap-3 bg-white text-background-dark hover:bg-gray-200 px-8 py-4 rounded-full font-bold text-base transition-all hover:scale-105 shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)]">
+                        <div className="mt-8 md:mt-12">
+                            <button className="group relative flex items-center justify-center gap-2 md:gap-3 bg-white text-background-dark hover:bg-gray-200 px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-sm md:text-base transition-all hover:scale-105 shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)] active:scale-95">
                                 <span>Explore Portfolio</span>
-                                <span className="material-symbols-outlined text-lg transition-transform group-hover:rotate-45">explore</span>
+                                <span className="material-symbols-outlined text-base md:text-lg transition-transform group-hover:rotate-45">explore</span>
                             </button>
                         </div>
                     </div>
                 </main>
 
                 {/* Footer */}
-                <footer className="absolute bottom-6 w-full flex justify-center pointer-events-none z-0">
-                    <div className="flex items-center gap-2 px-6 py-2 rounded-full bg-[#131022]/50 backdrop-blur-md border border-white/5">
+                <footer className="absolute bottom-4 md:bottom-6 w-full flex justify-center pointer-events-none z-0 px-4">
+                    <div className="flex items-center gap-2 px-4 md:px-6 py-2 rounded-full bg-[#131022]/50 backdrop-blur-md border border-white/5">
                         <span className="material-symbols-outlined text-white/40 text-sm">drag_pan</span>
-                        <p className="text-[#a19db9] text-xs font-medium tracking-wide">Drag, Swipe, or use Arrow Keys to Navigate</p>
+                        <p className="text-[#a19db9] text-[10px] md:text-xs font-medium tracking-wide">
+                            <span className="hidden sm:inline">Drag, Swipe, or use Arrow Keys to Navigate</span>
+                            <span className="sm:hidden">Swipe to Navigate</span>
+                        </p>
                     </div>
                 </footer>
             </div>
