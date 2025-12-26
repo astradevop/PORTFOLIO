@@ -1,71 +1,11 @@
 import { useNavigate } from 'react-router-dom';
-import { useDragNavigation } from '../hooks/useDragNavigation';
 
 export default function CentralHub() {
     const navigate = useNavigate();
 
-    // Enable drag navigation with page preview
-    const { dragOffset, isDragging, dragDirection, nextPage } = useDragNavigation({
-        up: '/about',
-        down: '/experience',
-        left: '/tools',
-        right: '/projects'
-    });
-
-    const getPageName = () => {
-        switch (dragDirection) {
-            case 'up': return 'ABOUT ME';
-            case 'down': return 'EXPERIENCE';
-            case 'left': return 'TOOLS';
-            case 'right': return 'PROJECTS';
-            default: return null;
-        }
-    };
-
-    const dragProgress = Math.min(Math.abs(dragOffset.x || dragOffset.y) / 150, 1);
-
     return (
-        <div
-            className="bg-background-dark text-white font-display overflow-hidden h-screen w-screen selection:bg-primary selection:text-white relative"
-            style={{
-                transform: `translate(${dragOffset.x}px, ${dragOffset.y}px)`,
-                transition: isDragging ? 'none' : 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
-            }}
+        <div className="bg-background-dark text-white font-display overflow-hidden h-screen w-screen selection:bg-primary selection:text-white relative"
         >
-            {/* Drag Preview Overlay */}
-            {isDragging && dragDirection && (
-                <div
-                    className="fixed inset-0 z-[100] flex items-center justify-center pointer-events-none"
-                    style={{
-                        opacity: dragProgress * 0.9
-                    }}
-                >
-                    <div className="bg-primary/20 backdrop-blur-xl border-2 border-primary/60 px-10 py-8 rounded-3xl shadow-2xl">
-                        <div className="flex flex-col items-center gap-4">
-                            <span className="material-symbols-outlined text-7xl text-primary animate-pulse">
-                                {dragDirection === 'up' && 'arrow_upward'}
-                                {dragDirection === 'down' && 'arrow_downward'}
-                                {dragDirection === 'left' && 'arrow_back'}
-                                {dragDirection === 'right' && 'arrow_forward'}
-                            </span>
-                            <div className="text-center">
-                                <p className="text-white text-3xl font-black tracking-wider mb-2">{getPageName()}</p>
-                                <p className="text-white/70 text-sm uppercase tracking-widest">
-                                    {dragProgress >= 1 ? 'Release to navigate' : 'Keep dragging...'}
-                                </p>
-                            </div>
-                            {/* Progress bar */}
-                            <div className="w-32 h-2 bg-white/20 rounded-full overflow-hidden mt-2">
-                                <div
-                                    className="h-full bg-primary transition-all duration-150"
-                                    style={{ width: `${dragProgress * 100}%` }}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )}
-
             {/* Background Grid Pattern */}
             <div className="fixed inset-0 pointer-events-none z-0">
                 <div className="absolute inset-0 bg-grid-pattern opacity-50"></div>
