@@ -24,10 +24,13 @@ export default function CentralHub() {
 
     return (
         <div
-            className="bg-background-dark text-white font-display overflow-hidden h-screen w-screen selection:bg-primary selection:text-white relative"
+            className="bg-background-dark text-white font-display overflow-hidden h-screen w-screen selection:bg-primary selection:text-white relative select-none"
             style={{
                 transform: `translate(${dragOffset.x}px, ${dragOffset.y}px)`,
-                transition: isDragging ? 'none' : 'transform 0.3s ease-out'
+                transition: isDragging ? 'none' : 'transform 0.3s ease-out',
+                touchAction: 'none',
+                userSelect: 'none',
+                WebkitUserSelect: 'none'
             }}
         >
             {/* Drag Indicator Overlay */}
