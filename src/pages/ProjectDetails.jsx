@@ -52,7 +52,7 @@ export default function ProjectDetails() {
                                 </div>
 
                                 {/* Metadata Grid */}
-                                <div className="grid grid-cols-2 gap-y-6 gap-x-4 border-t border-b border-[#2b2839] py-6">
+                                <div className="grid grid-cols-2 gap-y-8 gap-x-4 border-t border-b border-[#2b2839] py-8">
                                     <div className="flex flex-col gap-1">
                                         <span className="text-xs font-bold uppercase tracking-widest text-text-secondary">Role</span>
                                         <span className="font-semibold text-lg">Lead Product Designer</span>

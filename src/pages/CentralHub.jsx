@@ -77,7 +77,7 @@ export default function CentralHub() {
                     {/* Top - About Me/Contact */}
                     <div
                         onClick={() => navigate('/about')}
-                        className="absolute top-8 sm:top-12 md:top-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 sm:gap-3 group cursor-pointer z-30"
+                        className="absolute top-20 sm:top-12 md:top-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 sm:gap-3 group cursor-pointer z-30"
                     >
                         <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/10 bg-background-dark/50 text-white backdrop-blur-sm hover:bg-primary/20 hover:border-primary transition-all">
                             <span className="material-symbols-outlined text-lg sm:text-xl group-hover:-translate-y-1 transition-transform">arrow_upward</span>
@@ -174,7 +174,7 @@ export default function CentralHub() {
                 </main>
 
                 {/* Footer */}
-                <footer className="absolute bottom-6 w-full flex justify-center pointer-events-none z-0">
+                <footer className="absolute bottom-6 w-full flex justify-center pointer-events-none z-0 hidden sm:flex">
                     <div className="flex items-center gap-2 px-6 py-2 rounded-full bg-[#131022]/50 backdrop-blur-md border border-white/5">
                         <span className="material-symbols-outlined text-white/40 text-sm">touch_app</span>
                         <p className="text-[#a19db9] text-xs font-medium tracking-wide">Click to Navigate</p>

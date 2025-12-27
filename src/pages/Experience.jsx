@@ -18,7 +18,7 @@ export default function Experience() {
                 </div>
             </nav>
 
-            <div className="layout-container flex flex-col items-center w-full max-w-[1000px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 pt-20 sm:pt-24 md:pt-28 pb-20 sm:pb-32">
+            <div className="layout-container flex flex-col items-center w-full max-w-[1000px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 pt-32 sm:pt-28 pb-32 sm:pb-32">
                 {/* Header Section */}
                 <header className="w-full flex flex-col items-start gap-4 mb-16 animate-fade-in-down">
                     <div className="flex items-center gap-3">

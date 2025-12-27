@@ -28,7 +28,7 @@ export default function AboutMe() {
             </header>
 
             {/* Main Content Wrapper */}
-            <main className="flex-grow flex flex-col items-center justify-center pt-20 sm:pt-24 pb-16 sm:pb-24 px-4 sm:px-6 md:px-8 lg:px-20 xl:px-40 w-full max-w-[1400px] mx-auto">
+            <main className="flex-grow flex flex-col items-center justify-center pt-20 sm:pt-24 pb-32 sm:pb-24 px-4 sm:px-6 md:px-8 lg:px-20 xl:px-40 w-full max-w-[1400px] mx-auto">
                 {/* Hero Section */}
                 <section className="w-full flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-16 py-10 lg:py-16">
                     {/* Text Content */}

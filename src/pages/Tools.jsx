@@ -110,7 +110,7 @@ export default function Tools() {
                 </div>
             </header>
 
-            <main className="flex-grow flex flex-col pt-20 sm:pt-24 pb-12 px-4 sm:px-6 md:px-10 lg:px-40 max-w-[1440px] mx-auto w-full">
+            <main className="flex-grow flex flex-col pt-20 sm:pt-24 pb-32 md:pb-12 px-4 sm:px-6 md:px-10 lg:px-40 max-w-[1440px] mx-auto w-full">
                 {/* Header Section */}
                 <div className="flex flex-col gap-6 py-10 animate-fade-in-up">
                     <div className="flex flex-col gap-3">
@@ -231,14 +231,25 @@ export default function Tools() {
                 </div>
             </main>
 
-            {/* Back to Hub Button - Spatially Right */}
+            {/* Back to Hub Button - Spatially Right on Desktop, Bottom Center on Mobile */}
             <button
                 onClick={() => navigate('/')}
-                className="fixed right-8 top-1/2 -translate-y-1/2 z-50 group flex items-center gap-3 bg-[#1d1c27]/90 backdrop-blur-md border border-white/10 px-6 py-3 rounded-full hover:bg-white/10 hover:border-primary/50 transition-all duration-300 shadow-2xl hover:shadow-primary/20 hover:scale-105"
+                className="fixed right-8 top-1/2 -translate-y-1/2 z-50 group hidden md:flex items-center gap-3 bg-[#1d1c27]/90 backdrop-blur-md border border-white/10 px-6 py-3 rounded-full hover:bg-white/10 hover:border-primary/50 transition-all duration-300 shadow-2xl hover:shadow-primary/20 hover:scale-105"
             >
                 <span className="text-white font-bold tracking-wide uppercase text-sm">Back to Hub</span>
                 <span className="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">keyboard_arrow_right</span>
             </button>
+
+            {/* Mobile Back Button */}
+            <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 md:hidden">
+                <button
+                    onClick={() => navigate('/')}
+                    className="group flex items-center gap-3 bg-[#1d1c27]/90 backdrop-blur-md border border-white/10 px-6 py-3 rounded-full hover:bg-white/10 hover:border-primary/50 transition-all duration-300 shadow-2xl hover:shadow-primary/20 hover:scale-105"
+                >
+                    <span className="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">keyboard_arrow_left</span>
+                    <span className="text-white font-bold tracking-wide uppercase text-sm">Back to Hub</span>
+                </button>
+            </div>
         </div>
     );
 }

@@ -23,7 +23,7 @@ export default function Education() {
             </div>
 
             {/* Main Container */}
-            <div className="relative z-10 layout-container flex h-full grow flex-col max-w-[1440px] mx-auto p-4 sm:p-6 md:p-8 lg:p-12 xl:px-20 xl:py-16">
+            <div className="relative z-10 layout-container flex h-full grow flex-col max-w-[1440px] mx-auto p-4 sm:p-6 md:p-8 lg:p-12 xl:px-20 xl:py-16 pt-32 sm:pt-6">
                 {/* Header Section */}
                 <header className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-16 animate-fade-in-down">
                     <div className="flex flex-col gap-4 max-w-2xl">
