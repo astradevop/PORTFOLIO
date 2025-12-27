@@ -68,21 +68,9 @@ export default function CentralHub() {
                         </div>
                         <h2 className="text-white text-lg font-bold tracking-tight hidden sm:block">AKASH.DEV</h2>
                     </div>
-                    <button className="flex items-center justify-center size-12 rounded-full bg-white/5 hover:bg-white/10 border border-white/5 backdrop-blur-md transition-colors group pointer-events-auto">
-                        <span className="material-symbols-outlined text-white group-hover:text-primary transition-colors">menu</span>
-                    </button>
                 </header>
 
-                {/* Location Info */}
-                <div className="absolute bottom-8 left-8 z-50 hidden md:flex items-center gap-4 text-[#a19db9] text-xs font-mono tracking-widest uppercase">
-                    <div className="flex items-center justify-center size-10 rounded-full border border-white/10 bg-[#131022]/80 backdrop-blur-sm">
-                        <span className="material-symbols-outlined text-lg">my_location</span>
-                    </div>
-                    <div>
-                        <p>LOC: [0, 0]</p>
-                        <p>HUB: CENTRAL</p>
-                    </div>
-                </div>
+
 
                 {/* Main Content */}
                 <main className="flex-1 flex flex-col items-center justify-center relative w-full h-full p-6">
@@ -151,10 +139,36 @@ export default function CentralHub() {
                             </div>
                         </div>
                         <div className="mt-8 sm:mt-12">
-                            <button className="group relative flex items-center justify-center gap-2 sm:gap-3 bg-white text-background-dark hover:bg-gray-200 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-sm sm:text-base transition-all hover:scale-105 shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)]">
+                            <button onClick={() => navigate('/projects')} className="group relative flex items-center justify-center gap-2 sm:gap-3 bg-white text-background-dark hover:bg-gray-200 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-sm sm:text-base transition-all hover:scale-105 shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)]">
                                 <span>Explore Portfolio</span>
                                 <span className="material-symbols-outlined text-base sm:text-lg transition-transform group-hover:rotate-45">explore</span>
                             </button>
+                        </div>
+
+                        {/* Social Links - Added beautifully */}
+                        <div className="flex items-center gap-4 mt-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                            <a
+                                href="https://github.com/astradevop"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group flex items-center justify-center w-12 h-12 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/50 hover:scale-110 transition-all duration-300 backdrop-blur-sm shadow-lg shadow-black/20"
+                                aria-label="GitHub"
+                            >
+                                <svg className="w-6 h-6 fill-white/70 group-hover:fill-primary transition-colors" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.05-.015-2.055-3.33.72-4.035-1.605-4.035-1.605-.54-1.38-1.335-1.755-1.335-1.755-1.08-.735.075-.72.075-.72 1.2.09 1.83 1.245 1.83 1.245 1.065 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405 1.02 0 2.04.135 3 .405 2.295-1.545 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.92 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.285 0 .315.225.69.825.57C20.565 21.795 24 17.31 24 12c0-6.63-5.37-12-12-12z" />
+                                </svg>
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/in/aakash-s-nair"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group flex items-center justify-center w-12 h-12 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-[#0077b5]/50 hover:scale-110 transition-all duration-300 backdrop-blur-sm shadow-lg shadow-black/20"
+                                aria-label="LinkedIn"
+                            >
+                                <svg className="w-5 h-5 fill-white/70 group-hover:fill-[#0077b5] transition-colors" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </main>

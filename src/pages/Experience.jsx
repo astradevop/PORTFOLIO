@@ -10,10 +10,10 @@ export default function Experience() {
                 <div className="pointer-events-auto">
                     <a
                         onClick={() => navigate('/')}
-                        className="group flex items-center gap-2 bg-card-dark/80 backdrop-blur-md border border-[#2b2839] px-6 py-2 rounded-full shadow-lg hover:border-primary/50 transition-all duration-300 cursor-pointer"
+                        className="group flex items-center gap-3 bg-[#1d1c27]/90 backdrop-blur-md border border-white/10 px-6 py-3 rounded-full hover:bg-white/10 hover:border-primary/50 transition-all duration-300 shadow-2xl hover:shadow-primary/20 hover:scale-105 cursor-pointer"
                     >
                         <span className="material-symbols-outlined text-primary group-hover:-translate-y-1 transition-transform">keyboard_arrow_up</span>
-                        <span className="text-sm font-bold tracking-wide uppercase text-white/90">Back to Hub</span>
+                        <span className="text-white font-bold tracking-wide uppercase text-sm">Back to Hub</span>
                     </a>
                 </div>
             </nav>
@@ -114,17 +114,14 @@ export default function Experience() {
                 </div>
             </div>
 
-            {/* Floating Action Button */}
-            <div className="fixed bottom-8 right-8 z-40">
+            {/* Floating Action Button - Centered Bottom for Spatial Down Feel */}
+            <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-40">
                 <button
                     onClick={() => navigate('/education')}
-                    className="group flex items-center gap-3 bg-primary hover:bg-[#2b0eb5] text-white pl-5 pr-6 py-4 rounded-full shadow-[0_8px_30px_rgba(55,19,236,0.5)] hover:shadow-[0_8px_35px_rgba(55,19,236,0.7)] transition-all duration-300 transform hover:-translate-y-1"
+                    className="group flex flex-col items-center gap-2 bg-primary hover:bg-[#2b0eb5] text-white px-6 py-4 rounded-full shadow-[0_8px_30px_rgba(55,19,236,0.5)] hover:shadow-[0_8px_35px_rgba(55,19,236,0.7)] transition-all duration-300 transform hover:translate-y-1"
                 >
-                    <span className="material-symbols-outlined text-[24px]">school</span>
-                    <div className="flex flex-col items-start">
-                        <span className="text-sm font-bold leading-none">View Education</span>
-                        <span className="text-[10px] uppercase tracking-wide opacity-80 leading-none mt-1">& Certifications</span>
-                    </div>
+                    <span className="text-sm font-bold leading-none">View Education</span>
+                    <span className="material-symbols-outlined text-[24px] animate-bounce">keyboard_arrow_down</span>
                 </button>
             </div>
         </div>

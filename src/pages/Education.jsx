@@ -11,15 +11,15 @@ export default function Education() {
                 <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-primary/10 rounded-full blur-[150px]"></div>
             </div>
 
-            {/* Right Navigation Hint */}
-            <div
-                onClick={() => navigate('/')}
-                className="fixed right-0 top-1/2 -translate-y-1/2 z-50 hidden lg:flex flex-col items-center gap-2 pr-4 group cursor-pointer opacity-60 hover:opacity-100 transition-opacity"
-            >
-                <span className="text-xs uppercase tracking-widest font-bold -rotate-90 mb-8 text-text-muted group-hover:text-white transition-colors">Return Home</span>
-                <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center bg-background-dark/50 backdrop-blur-sm group-hover:bg-primary group-hover:border-primary transition-all duration-300">
-                    <span className="material-symbols-outlined text-white">arrow_forward</span>
-                </div>
+            {/* Navigation to Experience - Spatially Up */}
+            <div className="fixed top-8 left-1/2 -translate-x-1/2 z-50">
+                <button
+                    onClick={() => navigate('/experience')}
+                    className="group flex flex-col-reverse items-center gap-1 bg-[#1d1c27]/90 backdrop-blur-md border border-white/10 px-6 py-2 rounded-full hover:bg-white/10 hover:border-primary/50 transition-all duration-300 shadow-2xl hover:shadow-primary/20 hover:scale-105"
+                >
+                    <span className="text-white font-bold tracking-wide uppercase text-sm">Back to Experience</span>
+                    <span className="material-symbols-outlined text-primary group-hover:-translate-y-1 transition-transform">keyboard_arrow_up</span>
+                </button>
             </div>
 
             {/* Main Container */}

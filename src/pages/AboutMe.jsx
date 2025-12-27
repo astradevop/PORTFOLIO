@@ -44,18 +44,21 @@ export default function AboutMe() {
                         </h2>
                         {/* Social & Actions */}
                         <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start mt-2">
-                            <button className="flex items-center justify-center gap-2 rounded-full h-12 px-8 bg-primary text-white text-base font-bold shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all">
+                            <button
+                                onClick={() => window.open('/resume.pdf', '_blank')}
+                                className="flex items-center justify-center gap-2 rounded-full h-12 px-8 bg-primary text-white text-base font-bold shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all hover:scale-105"
+                            >
                                 <span className="material-symbols-outlined text-[20px]">download</span>
                                 <span>Download Resume</span>
                             </button>
                             <div className="flex items-center gap-3">
-                                <a aria-label="Github" className="size-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-[#2b2839] hover:bg-primary hover:text-white transition-all group" href="#">
+                                <a aria-label="Github" className="size-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-[#2b2839] hover:bg-primary hover:text-white transition-all group hover:scale-110" href="https://github.com/astradevop" target="_blank" rel="noopener noreferrer">
                                     <span className="material-symbols-outlined text-[20px] group-hover:text-white">code</span>
                                 </a>
-                                <a aria-label="LinkedIn" className="size-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-[#2b2839] hover:bg-primary hover:text-white transition-all group" href="#">
+                                <a aria-label="LinkedIn" className="size-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-[#2b2839] hover:bg-primary hover:text-white transition-all group hover:scale-110" href="https://www.linkedin.com/in/aakash-s-nair" target="_blank" rel="noopener noreferrer">
                                     <span className="material-symbols-outlined text-[20px] group-hover:text-white">work</span>
                                 </a>
-                                <a aria-label="Email" className="size-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-[#2b2839] hover:bg-primary hover:text-white transition-all group" href="#">
+                                <a aria-label="Email" className="size-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-[#2b2839] hover:bg-primary hover:text-white transition-all group hover:scale-110" href="mailto:akash.bmrskr@gmail.com">
                                     <span className="material-symbols-outlined text-[20px] group-hover:text-white">mail</span>
                                 </a>
                             </div>
@@ -117,15 +120,15 @@ export default function AboutMe() {
                 </div>
             </main>
 
-            {/* Scroll Up Indicator */}
-            <div
-                onClick={() => navigate('/contact')}
-                className="fixed top-24 left-1/2 -translate-x-1/2 flex flex-col-reverse items-center gap-2 z-40 group cursor-pointer opacity-70 hover:opacity-100 transition-opacity"
-            >
-                <span className="text-xs font-semibold tracking-widest uppercase text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors">Contact Me</span>
-                <div className="w-10 h-10 rounded-full bg-[#2b2839]/50 backdrop-blur-sm flex items-center justify-center animate-bounce border border-white/5 shadow-lg">
-                    <span className="material-symbols-outlined text-white">arrow_upward</span>
-                </div>
+            {/* Back to Hub Button - Spatially Down */}
+            <div className="fixed bottom-10 left-1/2 -translate-x-1/2 z-50">
+                <button
+                    onClick={() => navigate('/')}
+                    className="group flex items-center gap-3 bg-[#1d1c27]/90 backdrop-blur-md border border-white/10 px-6 py-3 rounded-full hover:bg-white/10 hover:border-primary/50 transition-all duration-300 shadow-2xl hover:shadow-primary/20 hover:scale-105"
+                >
+                    <span className="material-symbols-outlined text-primary group-hover:translate-y-1 transition-transform">keyboard_arrow_down</span>
+                    <span className="text-white font-bold tracking-wide uppercase text-sm">Back to Hub</span>
+                </button>
             </div>
         </div>
     );

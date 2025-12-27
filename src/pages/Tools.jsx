@@ -230,6 +230,15 @@ export default function Tools() {
                     </button>
                 </div>
             </main>
+
+            {/* Back to Hub Button - Spatially Right */}
+            <button
+                onClick={() => navigate('/')}
+                className="fixed right-8 top-1/2 -translate-y-1/2 z-50 group flex items-center gap-3 bg-[#1d1c27]/90 backdrop-blur-md border border-white/10 px-6 py-3 rounded-full hover:bg-white/10 hover:border-primary/50 transition-all duration-300 shadow-2xl hover:shadow-primary/20 hover:scale-105"
+            >
+                <span className="text-white font-bold tracking-wide uppercase text-sm">Back to Hub</span>
+                <span className="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">keyboard_arrow_right</span>
+            </button>
         </div>
     );
 }

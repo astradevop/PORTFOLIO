@@ -1,8 +1,8 @@
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function ProjectDetails() {
     const navigate = useNavigate();
-    const { id } = useParams();
+
 
     return (
         <div className="bg-background-light dark:bg-background-dark min-h-screen text-[#111] dark:text-white font-display overflow-x-hidden selection:bg-primary selection:text-white">
